@@ -1,0 +1,17 @@
+body {
+	background-color: gray;
+}
+
+.centrar {
+	display: flex;
+	justify-content: center;
+	background-color: tomato;
+}
+
+img {
+	margin: 0 auto;
+}
+/* section {
+	width: 100vw;
+	background-color: violet;
+} */
