@@ -18,6 +18,7 @@ let jugador_2 = document.getElementById('second_player')
 let namePuntaje_1 = document.getElementById('person_1')
 let namePuntaje_2 = document.getElementById('person_2')	
 
+let total_turnos = 0;
  
  
  document.addEventListener('DOMContentLoaded', function() {
@@ -93,10 +94,14 @@ const increaseScore = () => {
 const onChange = (e) => {		
 	console.log("______________________________________________________");
 	
+	total_turnos++;
 	
-	total_turnos == 10
-		?	toast
- 		:""
+	total_turnos == 25
+		?	 M.toast({html: 'termino el juego, veamos el marcador'})
+		: ""
+	
+	
+	console.log("toa","color:red",total_turnos);
 
 	let ele = document.getElementById(e.target.id);
 	e.target.className == "barco"
