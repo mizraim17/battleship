@@ -16,3 +16,13 @@ img {
 	color: white;
 	font-weight: bold;
 }
+
+.tit-principal {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+.advertencia {
+	color: yellowgreen;
+	font-size: 42px;
+}

@@ -26,10 +26,16 @@ console.log("____", document.querySelector("#one"));
 
  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
+	 var instances = M.Modal.init(elems);
+	 	openModal(instances)
   });
 
 
+
+const openModal = (m) => {
+	console.log("entro al mmodal","color:green",m);
+		m.open();
+	}
 
 
 const countMoves = () => {
@@ -85,7 +91,6 @@ const increaseScore = () => {
 
  
 	tot_puntaje_1 = document.getElementById('puntaje_1')
-
 	tot_puntaje_1.innerHTML=puntaje_1
 	
 
@@ -94,12 +99,14 @@ const increaseScore = () => {
 
 }
 
+
 const onChange = (e) => {		
 	console.log("______________________________________________________");
-	console.log("stateTurno",stateTurno); 
 	
-		console.log("puntaje_1",puntaje_1);
-		console.log("puntaje_2",puntaje_2);
+	
+	total_turnos == 10
+		?	toast
+ 		:""
 
 	let ele = document.getElementById(e.target.id);
 	e.target.className == "barco"
@@ -145,6 +152,7 @@ let printBoard = (board) => {
 	}
 };
  
- 
+
+
 printBoard(createBoard());
 

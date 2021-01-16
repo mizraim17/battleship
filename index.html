@@ -21,31 +21,50 @@
 
 		<div class="container">
 			<div class="row">
+				<div class="col">
+					<h1 class="tit-principal">Bienvenido a BattleShip</h1>
+					<p class="advertencia">Recuerda q es un juego de suerte</p>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="container">
+			<div class="row">
 				<div class="col s4">
 					<p class="txt-turn">
 						Turno de : <span id="turn"> </span>
 					</p>
 				</div>
-				<div class="col s4">
-					<p class="txt-turn">
-						Puntaje de <span id="person_1"> </span> <span id="puntaje_1"></span>
+
+			</div>
+
+			<div class="row">
+				<div class="col s6">
+					<p class="txt-turn" style="color: greenyellow;">
+						Puntaje de <span id="person_1"> </span> <span id="puntaje_1">0</span>
 					</p>
 				</div>
-				<div class="col s4">
-					<p class="txt-turn">
-						Puntaje de <span id="person_2"> </span> <span id="puntaje_2"></span>
+				<div class="col s6">
+					<p class="txt-turn" style="color: violet;">
+						Puntaje de <span id="person_2"> </span> <span id="puntaje_2">0</span>
 					</p>
 				</div>
 			</div>
 		</div>
 
-
-
-		<!-- Modal Trigger -->
-		<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+		<div class="container">
+			<div class="row">
+				<div class="col s4"></div>
+				<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Iniciar juego</a>
+			</div>
+		</div>
+		</div>
 
 		<!-- Modal Structure -->
-		<div id="modal1" class="modal">
+		<div id="modal1" class="modal ">
 			<div class="modal-content">
 				<h4>Dame los nombres de los jugadores</h4>
 				<div class="input-field col s6">
@@ -63,6 +82,8 @@
 				<a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=initNames()>aceptar</a>
 			</div>
 		</div>
+
+		<!-- Modal Trigger -->
 
 	</section>
 
