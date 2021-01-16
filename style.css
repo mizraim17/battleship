@@ -10,3 +10,9 @@ body {
 img {
 	margin: 0 auto;
 }
+
+.txt-turn {
+	font-size: 38px;
+	color: white;
+	font-weight: bold;
+}

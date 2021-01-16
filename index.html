@@ -1,20 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ships</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<section>
-			<div class="centrar" id="one"></div>
-			<div class="centrar" id="two"></div>
-			<div class="centrar" id="three"></div>
-			<div class="centrar" id="fourth"></div>
-			<div class="centrar" id="five"></div>
-		</section>
+<html lang="es">
 
-		<script src="./main.js"></script>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ships</title>
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+</head>
+
+<body>
+
+	<section>
+
+		<div class="container">
+			<div class="row">
+				<div class="col s4">
+					<p class="txt-turn">
+						Turno de : <span id="turn"> </span>
+					</p>
+				</div>
+				<div class="col s4">
+					<p class="txt-turn">
+						Puntaje de <span id="person_1"> </span> <span id="puntaje_1"></span>
+					</p>
+				</div>
+				<div class="col s4">
+					<p class="txt-turn">
+						Puntaje de <span id="person_2"> </span> <span id="puntaje_2"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<h4>Dame los nombres de los jugadores</h4>
+				<div class="input-field col s6">
+					<input placeholder="Placeholder" id="first_player" type="text" class="validate">
+					<label for="first_player">Jugador Uno</label>
+				</div>
+
+				<div class="input-field col s6">
+					<input placeholder="Placeholder" id="second_player" type="text" class="validate">
+					<label for="second_player">Jugador Dos</label>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=initNames()>aceptar</a>
+			</div>
+		</div>
+
+	</section>
+
+	<section>
+		<div class="centrar" id="one"></div>
+		<div class="centrar" id="two"></div>
+		<div class="centrar" id="three"></div>
+		<div class="centrar" id="fourth"></div>
+		<div class="centrar" id="five"></div>
+	</section>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<script src="./main.js"></script>
+
+</body>
+
 </html>
