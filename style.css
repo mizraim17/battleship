@@ -17,12 +17,42 @@ img {
 	font-weight: bold;
 }
 
+.txt-turn span {
+	background-color: white;
+	color: tomato;
+	padding: 20px;
+	text-align: center;
+}
+
+.puntaje-jugador-1 {
+	font-size: 30px;
+	color: greenyellow;
+	font-weight: bold;
+}
+
+.puntaje-jugador-1 span,
+.puntaje-jugador-2 span {
+	font-size: 35px;
+	font-style: italic;
+}
+
+.puntaje-jugador-2 {
+	font-size: 30px;
+	color: yellow;
+	font-weight: bold;
+}
+
 .tit-principal {
 	color: white;
 	text-align: center;
 	font-weight: bold;
 }
 .advertencia {
-	color: yellowgreen;
-	font-size: 42px;
+	color: rgb(135, 233, 228);
+	font-size: 33px;
+}
+
+.advertencia span {
+	color: white;
+	font-style: italic;
 }

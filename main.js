@@ -1,5 +1,4 @@
 
-
 let arrDiv = ["one", "two", "three", "fourth", "five"];
 let image = "";
 let count = 0;
@@ -20,22 +19,13 @@ let namePuntaje_1 = document.getElementById('person_1')
 let namePuntaje_2 = document.getElementById('person_2')	
 
  
-
-	
-console.log("____", document.querySelector("#one"));
-
+ 
  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
 	 var instances = M.Modal.init(elems);
-	 	openModal(instances)
+	 	 
   });
 
-
-
-const openModal = (m) => {
-	console.log("entro al mmodal","color:green",m);
-		m.open();
-	}
 
 
 const countMoves = () => {
