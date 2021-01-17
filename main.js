@@ -23,53 +23,35 @@ let total_turnos = 0;
  
  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
-	 var instances = M.Modal.init(elems);
-	 	 
+	 var instances = M.Modal.init(elems);	 	 
   });
 
 
 
 const countMoves = () => {
-
-	console.log("entro a cambiar turno");
-
 	(stateTurno = !stateTurno)
-	
-	console.log("stateTurno", stateTurno);
-
-	let ele = document.getElementById('turn');
-
-
-	console.log("turno", stateTurno);
-
+  ele = document.getElementById('turn');
 	turn = !turn;
-
-		console.log("turn", turn);
-
-
-
+	
 	ele.innerHTML = ` ${turn == true
 		? 	(person = `${jugador_1.value}`)
 		:		(person = `${jugador_2.value}` )} `;
  
 
-	 let puntajePlayer_1 = document.getElementById('puntaje_1');	
+	puntajePlayer_1 = document.getElementById('puntaje_1');	
 	puntajePlayer_1.innerHTML = puntaje_1
 	
-	 let puntajePlayer_2 = document.getElementById('puntaje_2');	
-	 puntajePlayer_2.innerHTML = puntaje_2
-	
-	
+	puntajePlayer_2 = document.getElementById('puntaje_2');	
+	puntajePlayer_2.innerHTML = puntaje_2	
 }
+
 
 
 const initNames = () => {
 	let firstPerson = document.getElementById('turn');	
-	firstPerson.innerHTML = `${jugador_1.value}`
+	firstPerson.innerHTML 	= `${jugador_1.value}`
 	namePuntaje_1.innerHTML = `${jugador_1.value}`
-	namePuntaje_2.innerHTML = `${jugador_2.value}`
-	
-	 
+	namePuntaje_2.innerHTML = `${jugador_2.value}`	 
 }
  
 
@@ -79,11 +61,9 @@ const increaseScore = () => {
 	
 
 	stateTurno == true ? puntaje_1 =puntaje_1+ 100 : puntaje_2=puntaje_2 + 100
-
  
 	tot_puntaje_1 = document.getElementById('puntaje_1')
-	tot_puntaje_1.innerHTML=puntaje_1
-	
+	tot_puntaje_1.innerHTML=puntaje_1	
 
 	tot_puntaje_2 = document.getElementById('puntaje_2')	
 	tot_puntaje_2.innerHTML=puntaje_2
@@ -91,24 +71,30 @@ const increaseScore = () => {
 }
 
 
+const annouceWinner = () => {
+	console.log("namePuntaje_1",jugador_1.value);
+	puntaje_1 > puntaje_2 
+	?M.toast({ html: `termino el juego, GANO  ${jugador_1.value}`  })
+		: M.toast({ html: `termino el juego, veamos el marcador ${jugador_2.value}` })
+}
+
 const onChange = (e) => {		
 	console.log("______________________________________________________");
 	
-	total_turnos++;
+	console.log("total_turnos",total_turnos);
 	
-	total_turnos == 25
-		?	 M.toast({html: 'termino el juego, veamos el marcador'})
-		: ""
-	
-	
-	console.log("toa","color:red",total_turnos);
-
 	let ele = document.getElementById(e.target.id);
 	e.target.className == "barco"
-		? ((ele.src = "./img/ship.gif"),(increaseScore()))
-		: ((ele.src = "./img/bad.gif"),
-		countMoves())
- 
+		? ((ele.src = "./img/ship.gif"),(increaseScore()),(total_turnos++))
+		: ((ele.src = "./img/bad.gif"),(total_turnos++),
+			countMoves()) 
+	
+	total_turnos == 25
+		? annouceWinner	() 
+		: ""
+	
+	console.log("total_turnos",total_turnos);
+	
 };
 
 const createBoard = () => {
@@ -126,6 +112,7 @@ const createBoard = () => {
 	return board;
 };
 
+
 let printBoard = (board) => {
 	for (i = 0; i < board.length; i++) {
 		for (j = 0; j < board.length; j++) {
@@ -133,7 +120,7 @@ let printBoard = (board) => {
 			let rowNow = arrDiv[i];
 			let newDiv = document.getElementById(`${rowNow}`);
 
-			var myImage = new Image(100, 200);
+			var myImage = new Image(200, 100);
 			myImage.src = "./img/mar.png";
 			myImage.id = count;
 
@@ -147,7 +134,6 @@ let printBoard = (board) => {
 	}
 };
  
-
 
 printBoard(createBoard());
 
