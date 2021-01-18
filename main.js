@@ -75,7 +75,7 @@ const annouceWinner = () => {
 	console.log("namePuntaje_1",jugador_1.value);
 	puntaje_1 > puntaje_2 
 	?M.toast({ html: `termino el juego, GANO  ${jugador_1.value}`  })
-		: M.toast({ html: `termino el juego, veamos el marcador ${jugador_2.value}` })
+		: M.toast({ html: `termino el juego, GANO ${jugador_2.value}` })
 }
 
 const onChange = (e) => {		
@@ -89,8 +89,8 @@ const onChange = (e) => {
 		: ((ele.src = "./img/bad.gif"),(total_turnos++),
 			countMoves()) 
 	
-	total_turnos == 25
-		? annouceWinner	() 
+	total_turnos == 36
+		? annouceWinner() 
 		: ""
 	
 	console.log("total_turnos",total_turnos);
@@ -101,10 +101,10 @@ const createBoard = () => {
 	var board = [],
 		coin;
 
-	for (let i = 0; i < 5; i++) {
+	for (let i = 0; i < 6; i++) {
 		board[i] = [];
 
-		for (let j = 0; j < 5; j++) {
+		for (let j = 0; j < 6; j++) {
 			coin = Math.round(Math.random() * 3);
 			coin == [1] ? (board[i][j] = "S") : (board[i][j] = "null");
 		}
@@ -117,8 +117,15 @@ let printBoard = (board) => {
 	for (i = 0; i < board.length; i++) {
 		for (j = 0; j < board.length; j++) {
 			count++;
-			let rowNow = arrDiv[i];
-			let newDiv = document.getElementById(`${rowNow}`);
+
+ 
+			// debugger;
+			var division = document.getElementById("one");
+			
+		 
+			newDiv = document.createElement("div"); 
+			
+			newDiv.className="col s12  m4 l3"
 
 			var myImage = new Image(200, 100);
 			myImage.src = "./img/mar.png";
@@ -128,8 +135,12 @@ let printBoard = (board) => {
 				? (myImage.className = "barco")
 				: (myImage.className = "mar");
 
+
 			newDiv.appendChild(myImage);
-			document.getElementById(`${count}`).addEventListener("click", onChange);
+			newDiv.addEventListener("click", onChange);
+
+			  division.appendChild(newDiv)
+			 
 		}
 	}
 };

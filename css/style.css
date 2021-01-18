@@ -12,6 +12,7 @@ img {
 }
 
 .txt-turn {
+	text-align: center;
 	font-size: 38px;
 	color: white;
 	font-weight: bold;
@@ -20,7 +21,7 @@ img {
 .txt-turn span {
 	background-color: white;
 	color: tomato;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 }
 
@@ -43,16 +44,37 @@ img {
 }
 
 .tit-principal {
+	font-size: 32px;
 	color: white;
 	text-align: center;
 	font-weight: bold;
 }
 .advertencia {
 	color: rgb(135, 233, 228);
-	font-size: 33px;
+	font-size: 20px;
+	text-align: center;
 }
 
 .advertencia span {
 	color: white;
 	font-style: italic;
+}
+
+@media screen and (min-width: 550px) {
+	.txt-turn span {
+		background-color: white;
+		color: tomato;
+		padding: 20px;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 1020px) {
+	.tit-principal {
+		font-size: 42px;
+	}
+
+	.advertencia {
+		font-size: 34px;
+	}
 }
